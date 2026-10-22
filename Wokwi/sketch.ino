@@ -24,7 +24,7 @@
       - Temperatura do óleo : média entre 90 °C e 105 °C
       - Pressão do óleo     : média em torno de 0,8 bar,
                               nunca abaixo de 0,3 bar
-      - Tensão elétrica     : média entre 13 V e 14 V
+      - Tensão elétrica     : média entre 13,5 V e 14,5 V
 
    BIBLIOTECAS NECESSÁRIAS (aba "Library Manager"):
       - Adafruit GFX Library
@@ -77,9 +77,9 @@ const float PRESSAO_MEDIA_ALVO      = 0.8;
 const float PRESSAO_MEDIA_TOLERANCIA = 0.3; // aceita média entre 0,5 e 1,1
 const float PRESSAO_MINIMA_SEGURA    = 0.3; // se cair abaixo disso -> CUIDADO
 
-// Tensão elétrica (V) - média deve ficar entre 13 e 14
-const float TENSAO_MEDIA_MIN = 13.0;
-const float TENSAO_MEDIA_MAX = 14.0;
+// Tensão elétrica (V) - média deve ficar entre 13.5 e 14.5
+const float TENSAO_MEDIA_MIN = 13.5;
+const float TENSAO_MEDIA_MAX = 14.5;
 
 // ---------------------- VARIÁVEIS DE CONTROLE -------------------
 
@@ -266,7 +266,7 @@ void mostrarLogSemanaAnteriorFicticio() {
   float tempMediaFicticia    = 98.4;  // dentro da faixa (90-105) -> OK
   float pressaoMediaFicticia = 0.82;  // perto de 0.8            -> OK
   float pressaoMinimaFicticia = 0.35; // acima do minimo de 0.3  -> OK
-  float tensaoMediaFicticia  = 13.6;  // dentro da faixa (13-14) -> OK
+  float tensaoMediaFicticia  = 14.0;  // dentro da faixa (13.5-14.5) -> OK
 
   String statusTemp    = classificarTemperatura(tempMediaFicticia);
   String statusPressao = classificarPressao(pressaoMediaFicticia, pressaoMinimaFicticia);
