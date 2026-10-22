@@ -100,6 +100,16 @@ String statusTempDisplay    = "OK";
 String statusPressaoDisplay = "OK";
 String statusTensaoDisplay  = "OK";
 
+void mostrarLogSemanaAnteriorFicticio();
+void atualizarDisplay();
+void coletarLeituraDoDia();
+void lerSensoresAtuais(float &tempOleo, float &pressaoOleo, float &tensao);
+float mapFloat(float x, float inMin, float inMax, float outMin, float outMax);
+void gerarDiagnosticoSemanal();
+String classificarTemperatura(float media);
+String classificarPressao(float media, float minima);
+String classificarTensao(float media);
+
 // ---------------------- SETUP -----------------------------------
 
 void setup() {
