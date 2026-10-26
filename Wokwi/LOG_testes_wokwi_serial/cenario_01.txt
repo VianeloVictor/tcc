@@ -1,0 +1,48 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1156
+load:0x40078000,len:11456
+ho 0 tail 12 room 4
+load:0x40080400,len:2972
+entry 0x400805dc
+
+=====================================================
+ SISTEMA DE MONITORAMENTO - VEICULOS ANTIGOS (ESP32)
+=====================================================
+
+-----------------------------------------------------
+ LOG DA SEMANA ANTERIOR (dados ficticios de demonstracao)
+-----------------------------------------------------
+Temperatura do oleo - Media: 98.4 C  -> OK
+Pressao do oleo     - Media: 0.82 bar (min: 0.35 bar) -> OK
+Tensao eletrica     - Media: 14.00 V  -> OK
+-----------------------------------------------------
+
+Iniciando coleta diaria de sensores...
+
+[Semana 1 | Dia 1/7] Temp. óleo: 80.0 °C | Pressão: 0.20 bar | Tensão: 12.00 V
+[Semana 1 | Dia 2/7] Temp. óleo: 80.0 °C | Pressão: 0.20 bar | Tensão: 12.00 V
+[Semana 1 | Dia 3/7] Temp. óleo: 80.0 °C | Pressão: 0.20 bar | Tensão: 12.00 V
+[Semana 1 | Dia 4/7] Temp. óleo: 80.0 °C | Pressão: 0.20 bar | Tensão: 12.00 V
+[Semana 1 | Dia 5/7] Temp. óleo: 80.0 °C | Pressão: 0.20 bar | Tensão: 12.00 V
+[Semana 1 | Dia 6/7] Temp. óleo: 80.0 °C | Pressão: 0.20 bar | Tensão: 12.00 V
+[Semana 1 | Dia 7/7] Temp. óleo: 80.0 °C | Pressão: 0.20 bar | Tensão: 12.00 V
+
+=====================================================
+   DIAGNOSTICO SEMANAL - SEMANA 1
+=====================================================
+-- Temperatura do óleo --
+Média: 80.0 °C | Mínima: 80.0 °C | Máxima: 80.0 °C | Status: CUIDADO
+
+-- Pressão do óleo --
+Média: 0.20 bar | Mínima: 0.20 bar | Máxima: 0.20 bar | Status: CUIDADO
+
+-- Tensão elétrica --
+Média: 12.00 V | Mínima: 12.00 V | Máxima: 12.00 V | Status: CUIDADO
+
+-----------------------------------------------------
+DIAGNOSTICO GERAL DO SISTEMA: CUIDADO
