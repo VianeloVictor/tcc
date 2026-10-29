@@ -1,159 +1,28 @@
-﻿Cenario;Data/hora UTC;Status da execucao Wokwi;Faixa temperatura;Temperatura configurada (C);Posicao potenciometro temperatura (0-1);ADC esperado temperatura (0-4095);Faixa pressao;Pressao configurada (bar);Posicao potenciometro pressao (0-1);ADC esperado pressao (0-4095);Faixa tensao;Tensao configurada (V);Posicao potenciometro tensao (0-1);ADC esperado tensao (0-4095);Dias por semana;Status esperado temperatura;Status esperado pressao;Status esperado tensao;Diagnostico geral esperado;Media temperatura medida (C);Minima temperatura medida (C);Maxima temperatura medida (C);Status temperatura medido;Media pressao medida (bar);Minima pressao medida (bar);Maxima pressao medida (bar);Status pressao medido;Media tensao medida (V);Minima tensao medida (V);Maxima tensao medida (V);Status tensao medido;Diagnostico geral medido;Resultado;Codigo de saida Wokwi CLI;Arquivo serial;Observacoes
-01;2026-10-26T21:37:36+00:00;EXECUTADO;baixa;80,0;0,4000;1638;baixa;0,20;0,0249;102;baixa;12,00;0,4286;1755;7;CUIDADO;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_01.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-02;2026-10-26T21:38:38+00:00;EXECUTADO;baixa;80,0;0,4000;1638;baixa;0,20;0,0249;102;normal;14,00;0,7143;2925;7;CUIDADO;CUIDADO;OK;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_02.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-03;2026-10-26T21:39:40+00:00;EXECUTADO;baixa;80,0;0,4000;1638;baixa;0,20;0,0249;102;alta;15,00;0,8571;3510;7;CUIDADO;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_03.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-04;2026-10-26T21:40:38+00:00;EXECUTADO;baixa;80,0;0,4000;1638;normal;0,80;0,1001;410;baixa;12,00;0,4286;1755;7;CUIDADO;OK;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_04.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-05;2026-10-26T21:41:36+00:00;EXECUTADO;baixa;80,0;0,4000;1638;normal;0,80;0,1001;410;normal;14,00;0,7143;2925;7;CUIDADO;OK;OK;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_05.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-06;2026-10-26T21:42:44+00:00;EXECUTADO;baixa;80,0;0,4000;1638;normal;0,80;0,1001;410;alta;15,00;0,8571;3510;7;CUIDADO;OK;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_06.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-07;2026-10-26T21:43:46+00:00;EXECUTADO;baixa;80,0;0,4000;1638;alta;1,50;0,1875;768;baixa;12,00;0,4286;1755;7;CUIDADO;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_07.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-08;2026-10-26T21:44:55+00:00;EXECUTADO;baixa;80,0;0,4000;1638;alta;1,50;0,1875;768;normal;14,00;0,7143;2925;7;CUIDADO;CUIDADO;OK;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_08.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-09;2026-10-26T21:45:53+00:00;EXECUTADO;baixa;80,0;0,4000;1638;alta;1,50;0,1875;768;alta;15,00;0,8571;3510;7;CUIDADO;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_09.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-10;2026-10-26T21:46:51+00:00;EXECUTADO;normal;98,0;0,5800;2375;baixa;0,20;0,0249;102;baixa;12,00;0,4286;1755;7;OK;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_10.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-11;2026-10-26T21:47:56+00:00;EXECUTADO;normal;98,0;0,5800;2375;baixa;0,20;0,0249;102;normal;14,00;0,7143;2925;7;OK;CUIDADO;OK;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_11.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-12;2026-10-26T21:48:55+00:00;EXECUTADO;normal;98,0;0,5800;2375;baixa;0,20;0,0249;102;alta;15,00;0,8571;3510;7;OK;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_12.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-13;2026-10-26T21:49:56+00:00;EXECUTADO;normal;98,0;0,5800;2375;normal;0,80;0,1001;410;baixa;12,00;0,4286;1755;7;OK;OK;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_13.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-14;2026-10-26T21:50:55+00:00;EXECUTADO;normal;98,0;0,5800;2375;normal;0,80;0,1001;410;normal;14,00;0,7143;2925;7;OK;OK;OK;OK;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_14.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-15;2026-10-26T21:51:59+00:00;EXECUTADO;normal;98,0;0,5800;2375;normal;0,80;0,1001;410;alta;15,00;0,8571;3510;7;OK;OK;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_15.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-16;2026-10-26T21:52:58+00:00;EXECUTADO;normal;98,0;0,5800;2375;alta;1,50;0,1875;768;baixa;12,00;0,4286;1755;7;OK;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_16.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-17;2026-10-26T21:53:53+00:00;EXECUTADO;normal;98,0;0,5800;2375;alta;1,50;0,1875;768;normal;14,00;0,7143;2925;7;OK;CUIDADO;OK;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_17.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-18;2026-10-26T21:54:54+00:00;EXECUTADO;normal;98,0;0,5800;2375;alta;1,50;0,1875;768;alta;15,00;0,8571;3510;7;OK;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_18.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-19;2026-10-26T21:55:52+00:00;EXECUTADO;alta;115,0;0,7499;3071;baixa;0,20;0,0249;102;baixa;12,00;0,4286;1755;7;CUIDADO;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_19.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-20;2026-10-26T21:56:54+00:00;EXECUTADO;alta;115,0;0,7499;3071;baixa;0,20;0,0249;102;normal;14,00;0,7143;2925;7;CUIDADO;CUIDADO;OK;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_20.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-21;2026-10-26T21:57:47+00:00;EXECUTADO;alta;115,0;0,7499;3071;baixa;0,20;0,0249;102;alta;15,00;0,8571;3510;7;CUIDADO;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_21.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-22;2026-10-26T21:58:41+00:00;EXECUTADO;alta;115,0;0,7499;3071;normal;0,80;0,1001;410;baixa;12,00;0,4286;1755;7;CUIDADO;OK;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_22.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-23;2026-10-26T21:59:33+00:00;EXECUTADO;alta;115,0;0,7499;3071;normal;0,80;0,1001;410;normal;14,00;0,7143;2925;7;CUIDADO;OK;OK;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_23.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-24;2026-10-26T22:00:35+00:00;EXECUTADO;alta;115,0;0,7499;3071;normal;0,80;0,1001;410;alta;15,00;0,8571;3510;7;CUIDADO;OK;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_24.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-25;2026-10-26T22:01:29+00:00;EXECUTADO;alta;115,0;0,7499;3071;alta;1,50;0,1875;768;baixa;12,00;0,4286;1755;7;CUIDADO;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;FALHOU;0;LOG_testes_wokwi_serial/cenario_25.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)"
-26;2026-10-26T22:02:30+00:00;EXECUTADO;alta;115,0;0,7499;3071;alta;1,50;0,1875;768;normal;14,00;0,7143;2925;7;CUIDADO;CUIDADO;OK;CUIDADO;;;;;;;;;;;;;;FALHOU;1;LOG_testes_wokwi_serial/cenario_26.txt;"Diagram issues in C:\Users\Victor\Documents\tcc\Wokwi\diagram.json:
-✗ [invalid-pin] Invalid pin ""GND.4"" for part ""esp"" (type: board-esp32-devkit-c-v4). Valid pins: 0, 2, 3V3, 4, 5, 5V, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33, 34, 35, CLK, CMD, D0, D1, D2, D3, EN, GND.1, GND.2, GND.3, RX, TX, VN, VP (esp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_pressao"" (type: wokwi-slide-potentiometer) (pot_pressao)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_temp"" (type: wokwi-slide-potentiometer) (pot_temp)
-⚠ [invalid-attribute] Unknown attribute ""label"" for part ""pot_tensao"" (type: wokwi-slide-potentiometer) (pot_tensao)
-ℹ [unsupported-part] Part ""esp"" uses undocumented type ""board-esp32-devkit-c-v4"". This part may change or be removed in future versions. (esp)
-API Error: Connection to transport closed unexpectedly: code 1006"
-27;;NAO EXECUTADO;alta;115,0;0,7499;3071;alta;1,50;0,1875;768;alta;15,00;0,8571;3510;7;CUIDADO;CUIDADO;CUIDADO;CUIDADO;;;;;;;;;;;;;;NAO EXECUTADO;;;Execucao interrompida: falha do Wokwi CLI sem diagnostico serial.
+Cenario,Data/hora UTC,Status da execucao Wokwi,Faixa temperatura,Temperatura configurada (C),Posicao potenciometro temperatura (0-1),ADC esperado temperatura (0-4095),Faixa pressao,Pressao configurada (bar),Posicao potenciometro pressao (0-1),ADC esperado pressao (0-4095),Faixa tensao,Tensao configurada (V),Posicao potenciometro tensao (0-1),ADC esperado tensao (0-4095),Dias por semana,Status esperado temperatura,Status esperado pressao,Status esperado tensao,Diagnostico geral esperado,Resultado
+1,2026-10-26T21:37:36+00:00,EXECUTADO,baixa,80,"0,4",1638,baixa,"0,2","0,0249",102,baixa,12,"0,4286",1755,7,CUIDADO,CUIDADO,CUIDADO,CUIDADO,FALHOU
+2,2026-10-26T21:38:38+00:00,EXECUTADO,baixa,80,"0,4",1638,baixa,"0,2","0,0249",102,normal,14,"0,7143",2925,7,CUIDADO,CUIDADO,OK,CUIDADO,FALHOU
+3,2026-10-26T21:39:40+00:00,EXECUTADO,baixa,80,"0,4",1638,baixa,"0,2","0,0249",102,alta,15,"0,8571",3510,7,CUIDADO,CUIDADO,CUIDADO,CUIDADO,FALHOU
+4,2026-10-26T21:40:38+00:00,EXECUTADO,baixa,80,"0,4",1638,normal,"0,8","0,1001",410,baixa,12,"0,4286",1755,7,CUIDADO,OK,CUIDADO,CUIDADO,FALHOU
+5,2026-10-26T21:41:36+00:00,EXECUTADO,baixa,80,"0,4",1638,normal,"0,8","0,1001",410,normal,14,"0,7143",2925,7,CUIDADO,OK,OK,CUIDADO,FALHOU
+6,2026-10-26T21:42:44+00:00,EXECUTADO,baixa,80,"0,4",1638,normal,"0,8","0,1001",410,alta,15,"0,8571",3510,7,CUIDADO,OK,CUIDADO,CUIDADO,FALHOU
+7,2026-10-26T21:43:46+00:00,EXECUTADO,baixa,80,"0,4",1638,alta,"1,5","0,1875",768,baixa,12,"0,4286",1755,7,CUIDADO,CUIDADO,CUIDADO,CUIDADO,FALHOU
+8,2026-10-26T21:44:55+00:00,EXECUTADO,baixa,80,"0,4",1638,alta,"1,5","0,1875",768,normal,14,"0,7143",2925,7,CUIDADO,CUIDADO,OK,CUIDADO,FALHOU
+9,2026-10-26T21:45:53+00:00,EXECUTADO,baixa,80,"0,4",1638,alta,"1,5","0,1875",768,alta,15,"0,8571",3510,7,CUIDADO,CUIDADO,CUIDADO,CUIDADO,FALHOU
+10,2026-10-26T21:46:51+00:00,EXECUTADO,normal,98,"0,58",2375,baixa,"0,2","0,0249",102,baixa,12,"0,4286",1755,7,OK,CUIDADO,CUIDADO,CUIDADO,FALHOU
+11,2026-10-26T21:47:56+00:00,EXECUTADO,normal,98,"0,58",2375,baixa,"0,2","0,0249",102,normal,14,"0,7143",2925,7,OK,CUIDADO,OK,CUIDADO,FALHOU
+12,2026-10-26T21:48:55+00:00,EXECUTADO,normal,98,"0,58",2375,baixa,"0,2","0,0249",102,alta,15,"0,8571",3510,7,OK,CUIDADO,CUIDADO,CUIDADO,FALHOU
+13,2026-10-26T21:49:56+00:00,EXECUTADO,normal,98,"0,58",2375,normal,"0,8","0,1001",410,baixa,12,"0,4286",1755,7,OK,OK,CUIDADO,CUIDADO,FALHOU
+14,2026-10-26T21:50:55+00:00,EXECUTADO,normal,98,"0,58",2375,normal,"0,8","0,1001",410,normal,14,"0,7143",2925,7,OK,OK,OK,OK,PASSOU
+15,2026-10-26T21:51:59+00:00,EXECUTADO,normal,98,"0,58",2375,normal,"0,8","0,1001",410,alta,15,"0,8571",3510,7,OK,OK,CUIDADO,CUIDADO,FALHOU
+16,2026-10-26T21:52:58+00:00,EXECUTADO,normal,98,"0,58",2375,alta,"1,5","0,1875",768,baixa,12,"0,4286",1755,7,OK,CUIDADO,CUIDADO,CUIDADO,FALHOU
+17,2026-10-26T21:53:53+00:00,EXECUTADO,normal,98,"0,58",2375,alta,"1,5","0,1875",768,normal,14,"0,7143",2925,7,OK,CUIDADO,OK,CUIDADO,FALHOU
+18,2026-10-26T21:54:54+00:00,EXECUTADO,normal,98,"0,58",2375,alta,"1,5","0,1875",768,alta,15,"0,8571",3510,7,OK,CUIDADO,CUIDADO,CUIDADO,FALHOU
+19,2026-10-26T21:55:52+00:00,EXECUTADO,alta,115,"0,7499",3071,baixa,"0,2","0,0249",102,baixa,12,"0,4286",1755,7,CUIDADO,CUIDADO,CUIDADO,CUIDADO,FALHOU
+20,2026-10-26T21:56:54+00:00,EXECUTADO,alta,115,"0,7499",3071,baixa,"0,2","0,0249",102,normal,14,"0,7143",2925,7,CUIDADO,CUIDADO,OK,CUIDADO,FALHOU
+21,2026-10-26T21:57:47+00:00,EXECUTADO,alta,115,"0,7499",3071,baixa,"0,2","0,0249",102,alta,15,"0,8571",3510,7,CUIDADO,CUIDADO,CUIDADO,CUIDADO,FALHOU
+22,2026-10-26T21:58:41+00:00,EXECUTADO,alta,115,"0,7499",3071,normal,"0,8","0,1001",410,baixa,12,"0,4286",1755,7,CUIDADO,OK,CUIDADO,CUIDADO,FALHOU
+23,2026-10-26T21:59:33+00:00,EXECUTADO,alta,115,"0,7499",3071,normal,"0,8","0,1001",410,normal,14,"0,7143",2925,7,CUIDADO,OK,OK,CUIDADO,FALHOU
+24,2026-10-26T22:00:35+00:00,EXECUTADO,alta,115,"0,7499",3071,normal,"0,8","0,1001",410,alta,15,"0,8571",3510,7,CUIDADO,OK,CUIDADO,CUIDADO,FALHOU
+25,2026-10-26T22:01:29+00:00,EXECUTADO,alta,115,"0,7499",3071,alta,"1,5","0,1875",768,baixa,12,"0,4286",1755,7,CUIDADO,CUIDADO,CUIDADO,CUIDADO,FALHOU
+26,2026-10-26T22:02:30+00:00,EXECUTADO,alta,115,"0,7499",3071,alta,"1,5","0,1875",768,normal,14,"0,7143",2925,7,CUIDADO,CUIDADO,OK,CUIDADO,FALHOU
+27,,NAO EXECUTADO,alta,115,"0,7499",3071,alta,"1,5","0,1875",768,alta,15,"0,8571",3510,7,CUIDADO,CUIDADO,CUIDADO,CUIDADO,NAO EXECUTADO
