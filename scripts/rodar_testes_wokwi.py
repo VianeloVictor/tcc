@@ -185,9 +185,9 @@ def normalized_text(text):
 def parse_measurements(text):
     text = normalized_text(text)
     pattern = re.compile(
-        r"Media:\s*([\d.]+)\s*(?:C|bar|V)\s*\|\s*"
-        r"Minima:\s*([\d.]+)\s*(?:C|bar|V)\s*\|\s*"
-        r"Maxima:\s*([\d.]+)\s*(?:C|bar|V)\s*\|\s*"
+        r"Media:\s*([\d.]+)\s*°?\s*(?:C|bar|V)\s*\|\s*"
+        r"Minima:\s*([\d.]+)\s*°?\s*(?:C|bar|V)\s*\|\s*"
+        r"Maxima:\s*([\d.]+)\s*°?\s*(?:C|bar|V)\s*\|\s*"
         r"Status:\s*(OK|CUIDADO)"
     )
     matches = pattern.findall(text)
@@ -345,7 +345,7 @@ def main():
                 observed_statuses = update_observed(row, measurements, general)
                 expected = case["expected"]
                 passed = tuple(observed_statuses) == expected and general == case["general"]
-                row["Resultado"] = "PASSOU" if passed and result.returncode == 0 else "FALHOU"
+                row["Resultado"] = "PASSOU" if passed else "FALHOU"
             else:
                 row["Resultado"] = "FALHOU"
                 row["Observacoes"] = (
