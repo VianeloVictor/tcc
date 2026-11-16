@@ -1,0 +1,90 @@
+COMO FUNCIONA O SCRIPT rodar_testes_wokwi.py
+================================================
+
+O script scripts/rodar_testes_wokwi.py automatiza a compilacao do firmware e
+a execucao de 27 combinacoes de teste, mais um cenario complementar, no
+simulador Wokwi. Os resultados sao
+gravados em LOG_testes_wokwi.csv e os dados seriais em
+LOG_testes_wokwi_serial/.
+
+1. Combinacoes de teste
+-----------------------
+O script combina tres configuracoes de cada sensor:
+
+- Temperatura: baixa (80 C), normal (98 C) e alta (115 C).
+- Pressao: baixa (0,2 bar), normal (0,8 bar) e alta (1,5 bar).
+- Tensao: baixa (12 V), normal (14 V) e alta (15 V).
+
+Como sao tres valores para cada um dos tres sensores, sao gerados
+3 x 3 x 3 = 27 cenarios. O cenario 28 e complementar: temperatura e tensao
+normais e pressao em 0,2 bar, abaixo do limite de seguranca de 0,3 bar.
+Para cada valor, o script calcula a posicao do potenciometro e o valor ADC
+correspondente. Tambem determina os status esperados (OK ou CUIDADO) e o
+diagnostico geral esperado.
+
+2. Pre-requisitos e compilacao
+------------------------------
+Antes de executar os cenarios, o script procura o Wokwi CLI e o PlatformIO e
+verifica se a variavel de ambiente WOKWI_CLI_TOKEN esta configurada. Se faltar
+algum requisito, grava a explicacao no CSV e encerra sem executar os testes.
+
+Com os requisitos presentes, compila o firmware para o ambiente esp32dev
+usando o comando:
+
+    pio run -e esp32dev
+
+Se a compilacao falhar, registra a falha no CSV, mostra a saida da compilacao
+e encerra.
+
+3. Execucao de cada cenario
+---------------------------
+Para cada um dos 28 cenarios, o script:
+
+- cria temporariamente um arquivo YAML do cenario;
+- ajusta os controles dos potenciometros de temperatura, pressao e tensao;
+- instrui o Wokwi a aguardar o diagnostico geral esperado;
+- executa o Wokwi CLI com timeout de 45 segundos;
+- salva a saida serial em LOG_testes_wokwi_serial/cenario_NN.txt.
+
+Os arquivos YAML sao temporarios e sao removidos ao final da execucao.
+
+4. Leitura e comparacao dos resultados
+--------------------------------------
+O script procura no texto serial as medias, minimas, maximas e os status dos
+tres sensores, alem do diagnostico geral. O parser normaliza acentos e codigos
+de cor do terminal e reconhece a unidade de temperatura com ou sem o simbolo
+de grau, como "C" ou "°C".
+
+O resultado do cenario e PASSOU quando todos os status medidos (temperatura,
+pressao e tensao) e o diagnostico geral correspondem aos valores esperados.
+O status CUIDADO nao significa, por si so, que o teste falhou: se CUIDADO era
+o resultado esperado e foi obtido, o cenario passa.
+
+Se as medicoes nao puderem ser lidas ou os resultados diferirem do esperado,
+o cenario e registrado como FALHOU. O codigo de saida do Wokwi CLI e salvo
+separadamente; quando ha medicoes completas, a classificacao compara os
+resultados esperados e obtidos.
+
+Se o Wokwi CLI retornar erro e nao houver medicoes, o script para a execucao,
+registra a observacao e deixa os cenarios seguintes como nao executados.
+O CSV e atualizado a cada cenario para preservar o progresso.
+
+5. Arquivos de resultado
+------------------------
+LOG_testes_wokwi.csv contem as configuracoes dos 27 casos da matriz e do
+cenario complementar, os resultados
+esperados, os valores medidos, o status final (PASSOU ou FALHOU), o codigo de
+saida do Wokwi CLI e observacoes.
+
+LOG_testes_wokwi_serial/ contem os logs seriais usados para analisar cada
+execucao. Se nao houver saida serial suficiente, o cenario nao pode ser
+confirmado como aprovado pelo script.
+
+O script recria o CSV com as colunas definidas na constante FIELDS e o
+atualiza a cada cenario executado.
+
+6. Como executar
+----------------
+Abra um terminal na pasta raiz do projeto e execute no PowerShell:
+
+    python .\scripts\rodar_testes_wokwi.py

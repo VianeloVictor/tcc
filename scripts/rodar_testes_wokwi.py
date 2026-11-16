@@ -5,6 +5,7 @@ Requer PlatformIO, Wokwi CLI e WOKWI_CLI_TOKEN configurado no ambiente.
 """
 
 import csv
+import argparse
 import os
 import re
 import shutil
@@ -113,6 +114,43 @@ def make_cases():
                 "general": "OK" if all(status == "OK" for status in statuses) else "CUIDADO",
             }
         )
+
+    temperature = ("normal", 98.0)
+    pressure = ("baixa", 0.2)
+    voltage = ("normal", 14.0)
+    daily_readings = (
+        (98.0, 0.20, 13.60),
+        (99.0, 0.21, 13.70),
+        (100.0, 0.22, 13.80),
+        (101.0, 0.23, 14.00),
+        (102.0, 0.24, 14.10),
+        (103.0, 0.25, 14.30),
+        (106.0, 0.45, 14.40),
+    )
+    temperature = ("variavel", sum(reading[0] for reading in daily_readings) / 7)
+    pressure = ("variavel", sum(reading[1] for reading in daily_readings) / 7)
+    voltage = ("variavel", sum(reading[2] for reading in daily_readings) / 7)
+    temp_adc, temp_position = adc_and_position(40.0, 140.0, temperature[1])
+    pressure_adc, pressure_position = adc_and_position(0.0, 8.0, pressure[1])
+    voltage_adc, voltage_position = adc_and_position(9.0, 16.0, voltage[1])
+    statuses = (
+        classify_temperature(temperature[1]),
+        classify_pressure(pressure[1]),
+        classify_voltage(voltage[1]),
+    )
+    cases.append(
+        {
+            "number": 28,
+            "temperature": temperature,
+            "pressure": pressure,
+            "voltage": voltage,
+            "adc": (temp_adc, pressure_adc, voltage_adc),
+            "positions": (temp_position, pressure_position, voltage_position),
+            "expected": statuses,
+            "general": "OK" if all(status == "OK" for status in statuses) else "CUIDADO",
+            "daily_readings": daily_readings,
+        }
+    )
     return cases
 
 
@@ -149,17 +187,47 @@ def initial_row(case, status="NAO EXECUTADO", notes=""):
         "Status esperado tensao": expected_voltage,
         "Diagnostico geral esperado": case["general"],
         "Resultado": status,
-        "Observacoes": notes,
+        "Observacoes": notes
+        or (
+            "Cenario complementar: sete leituras diferentes por dia; "
+            "a temperatura de 106,0 C no dia 7 supera a media semanal "
+            "e exercita a ramificacao de classificacao do sistema."
+            if case["number"] == 28
+            else ""
+        ),
     }
 
 
 def write_csv(rows):
     with CSV_PATH.open("w", encoding="utf-8-sig", newline="") as log_file:
         writer = csv.DictWriter(
-            log_file, fieldnames=FIELDS, delimiter=";", extrasaction="ignore"
+            log_file,
+            fieldnames=FIELDS,
+            delimiter=";",
+            extrasaction="ignore",
+            lineterminator="\n",
         )
         writer.writeheader()
         writer.writerows(rows)
+
+
+def load_existing_rows():
+    if not CSV_PATH.exists():
+        return None
+    with CSV_PATH.open("r", encoding="utf-8-sig", newline="") as log_file:
+        reader = csv.DictReader(log_file, delimiter=";")
+        if reader.fieldnames != list(FIELDS):
+            return None
+        return {row["Cenario"]: row for row in reader}
+
+
+def merged_rows(selected_rows, existing_rows):
+    if not existing_rows:
+        return selected_rows
+    merged = dict(existing_rows)
+    for row in selected_rows:
+        merged[row["Cenario"]] = row
+    return [merged[number] for number in sorted(merged, key=int)]
 
 
 def find_executable(names, fallback_paths=()):
@@ -198,6 +266,45 @@ def parse_measurements(text):
 
 
 def scenario_text(case):
+    if case["number"] == 28:
+        lines = [
+            "name: 'Cenario 28 - leituras diarias diferentes'",
+            "version: 1",
+            "steps:",
+        ]
+        for day, (temperature, pressure, voltage) in enumerate(
+            case["daily_readings"], start=1
+        ):
+            temp_adc, temp_position = adc_and_position(40.0, 140.0, temperature)
+            pressure_adc, pressure_position = adc_and_position(0.0, 8.0, pressure)
+            voltage_adc, voltage_position = adc_and_position(9.0, 16.0, voltage)
+            del temp_adc, pressure_adc, voltage_adc
+            for part_id, position in (
+                ("pot_temp", temp_position),
+                ("pot_pressao", pressure_position),
+                ("pot_tensao", voltage_position),
+            ):
+                lines.extend(
+                    [
+                        "  - set-control:",
+                        f"      part-id: {part_id}",
+                        "      name: position",
+                        f"      value: {position:.8f}",
+                    ]
+                )
+            lines.append(
+                "  - wait-serial: "
+                f"'[Semana 1 | Dia {day}/7]'"
+            )
+        lines.extend(
+            [
+                "  - wait-serial: 'DIAGNOSTICO GERAL DO SISTEMA: "
+                + case["general"]
+                + "'",
+            ]
+        )
+        return "\n".join(lines) + "\n"
+
     positions = case["positions"]
     steps = [
         ("pot_temp", positions[0]),
@@ -250,8 +357,23 @@ def update_observed(row, measurements, general):
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Executa os cenarios Wokwi e atualiza a planilha CSV."
+    )
+    parser.add_argument(
+        "--cenario",
+        type=int,
+        choices=range(1, 29),
+        metavar="1-28",
+        help="executa somente o cenario informado",
+    )
+    arguments = parser.parse_args()
+
     cases = make_cases()
+    if arguments.cenario:
+        cases = [case for case in cases if case["number"] == arguments.cenario]
     rows = [initial_row(case) for case in cases]
+    existing_rows = load_existing_rows() if arguments.cenario else None
     cli = find_executable(
         ("wokwi-cli", "wokwi-cli.exe"),
         (Path.home() / ".wokwi" / "bin" / "wokwi-cli.exe",),
@@ -274,9 +396,9 @@ def main():
         reason = " ".join(blockers)
         for row in rows:
             row["Observacoes"] = reason
-        write_csv(rows)
+        write_csv(merged_rows(rows, existing_rows) if arguments.cenario else rows)
         print(reason, file=sys.stderr)
-        print(f"Planilha criada com 27 casos pendentes: {CSV_PATH}")
+        print(f"Planilha criada com {len(cases)} casos pendentes: {CSV_PATH}")
         return 2
 
     build = subprocess.run(
@@ -291,7 +413,7 @@ def main():
         reason = "Falha ao compilar firmware: " + build.stderr[-1000:].strip()
         for row in rows:
             row["Observacoes"] = reason
-        write_csv(rows)
+        write_csv(merged_rows(rows, existing_rows) if arguments.cenario else rows)
         print(build.stdout, file=sys.stderr)
         print(build.stderr, file=sys.stderr)
         return build.returncode
@@ -309,8 +431,10 @@ def main():
             scenario_path = temp_path / f"cenario_{case['number']:02}.yaml"
             scenario_path.write_text(scenario_text(case), encoding="utf-8")
             serial_path = SERIAL_DIR / f"cenario_{case['number']:02}.txt"
+            attempt_serial_path = temp_path / f"serial_{case['number']:02}.txt"
             scenario_relative = scenario_path.relative_to(ROOT).as_posix()
             serial_relative = serial_path.relative_to(ROOT).as_posix()
+            attempt_serial_relative = attempt_serial_path.relative_to(ROOT).as_posix()
             command = [
                 cli,
                 ".",
@@ -319,7 +443,7 @@ def main():
                 "--timeout",
                 str(TIMEOUT_MS),
                 "--serial-log-file",
-                serial_relative,
+                attempt_serial_relative,
                 "--expect-text",
                 f"DIAGNOSTICO GERAL DO SISTEMA: {case['general']}",
             ]
@@ -332,8 +456,11 @@ def main():
                 capture_output=True,
             )
             serial_text = ""
-            if serial_path.exists():
-                serial_text = serial_path.read_text(encoding="utf-8", errors="replace")
+            if attempt_serial_path.exists():
+                shutil.copyfile(attempt_serial_path, serial_path)
+                serial_text = attempt_serial_path.read_text(
+                    encoding="utf-8", errors="replace"
+                )
             output = serial_text or result.stdout + "\n" + result.stderr
             measurements, general = parse_measurements(output)
             row["Status da execucao Wokwi"] = "EXECUTADO"
@@ -354,9 +481,9 @@ def main():
 
             rows[index] = row
             completed += 1
-            write_csv(rows)
+            write_csv(merged_rows(rows, existing_rows) if arguments.cenario else rows)
             print(
-                f"Cenario {case['number']:02}/27: {row['Resultado']} "
+                f"Cenario {case['number']:02}/{len(cases)}: {row['Resultado']} "
                 f"(codigo Wokwi CLI {result.returncode})"
             )
 
@@ -364,11 +491,14 @@ def main():
                 reason = "Execucao interrompida: falha do Wokwi CLI sem diagnostico serial."
                 for pending_row in rows[index + 1 :]:
                     pending_row["Observacoes"] = reason
-                write_csv(rows)
+                write_csv(merged_rows(rows, existing_rows) if arguments.cenario else rows)
                 break
 
     passed_count = sum(row["Resultado"] == "PASSOU" for row in rows)
-    print(f"\nTestes executados: {completed}; passaram: {passed_count}; planilha: {CSV_PATH}")
+    print(
+        f"\nTestes executados: {completed}; passaram: {passed_count}; "
+        f"planilha: {CSV_PATH}"
+    )
     print(f"Logs seriais: {SERIAL_DIR}")
     return 0 if completed == len(cases) and passed_count == len(cases) else 1
 
